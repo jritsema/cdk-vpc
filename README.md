@@ -6,5 +6,16 @@ Provisions a vanilla AWS VPC with public and private subnets per AZ.  Network ro
 
 ```
 npm install
-npx cdk deploy
+make deploy
+```
+
+### develop
+
+```
+ Choose a make command to run
+
+  watch    watch for changes and compile
+  diff     compare deployed stack with current state
+  synth    emits the synthesized CloudFormation template
+  deploy   deploy this stack to your default AWS account/region
 ```
