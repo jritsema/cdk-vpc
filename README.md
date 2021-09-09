@@ -1,14 +1,10 @@
-# Welcome to your CDK TypeScript project!
+# cdk-vpc
 
-This is a blank project for TypeScript development with CDK.
+Provisions a vanilla AWS VPC with public and private subnets per AZ.  Network routing for the public subnets will be configured to allow outbound access directly via an Internet Gateway.  Network routing for the private subnets will be configured to allow outbound access via a set of resilient NAT Gateways (one per AZ).
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+### usage
 
-## Useful commands
-
- * `npm run build`   compile typescript to js
- * `npm run watch`   watch for changes and compile
- * `npm run test`    perform the jest unit tests
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk synth`       emits the synthesized CloudFormation template
+```
+npm install
+npx cdk deploy
+```
