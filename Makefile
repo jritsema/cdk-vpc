@@ -8,6 +8,11 @@ help: Makefile
 	@sed -n 's/^##//p' $< | column -t -s ':' |  sed -e 's/^/ /'
 	@echo
 
+## init: initialize environment
+.PHONY: init
+init:
+	npm install
+
 ## watch: watch for changes and compile
 .PHONY: watch
 watch:
@@ -32,3 +37,8 @@ deploy:
 .PHONY: output
 output:
 	aws cloudformation describe-stacks --stack-name CdkVpcStack | jq '.Stacks | .[] | .Outputs'
+
+## destroy: destroy this stack
+.PHONY: destroy 
+destroy:
+	npx cdk destroy
